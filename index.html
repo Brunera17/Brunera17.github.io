@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Bruno David Martins — Full Stack Developer</title>
+    <meta name="description" content="Portfólio de Bruno David Martins: desenvolvedor Full Stack focado em automação e integrações com Python, React e TypeScript." />
+    <meta name="theme-color" content="#0a0e13" />
+
+    <!-- Prévia ao compartilhar (LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bruno David Martins — Full Stack Developer" />
+    <meta property="og:description" content="Automação e integrações que eliminam trabalho manual — Python, React e TypeScript." />
+    <meta property="og:image" content="https://github.com/Brunera17.png" />
+    <meta property="og:url" content="https://brunera17.github.io" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Aplica o tema antes de pintar a página, para não piscar -->
+    <script>
+      ;(function () {
+        var t = null
+        try { t = localStorage.getItem('theme') } catch (e) {}
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+        }
+        document.documentElement.dataset.theme = t
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
