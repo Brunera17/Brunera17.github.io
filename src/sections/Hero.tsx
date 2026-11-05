@@ -12,41 +12,52 @@ const terminal = [
 ] as const
 
 export default function Hero() {
-  const [first, ...rest] = profile.name.split(' ')
-
   return (
     <section id="inicio" className="relative overflow-hidden">
       <div className="bg-grid pointer-events-none absolute inset-0" />
-      <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-4 pt-16 pb-20 sm:px-6 md:pt-24 lg:grid-cols-[1.15fr_1fr]">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-4 pt-14 pb-20 sm:px-6 md:pt-20 lg:grid-cols-[1.2fr_1fr]">
         <div className="reveal">
-          <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-xs text-muted">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-            Aberto a oportunidades e freelances
-          </span>
+          {/* Quem sou */}
+          <div className="flex items-center gap-3">
+            <img
+              src={profile.avatarUrl}
+              alt=""
+              width={44}
+              height={44}
+              className="h-11 w-11 rounded-full border border-line"
+            />
+            <div className="leading-tight">
+              <p className="font-medium">{profile.name}</p>
+              <p className="text-sm text-muted">{profile.currentJob}</p>
+            </div>
+          </div>
 
-          <h1 className="mt-6 font-display text-5xl leading-[1.05] font-bold tracking-tight md:text-7xl">
-            {first}
-            <br />
-            <span className="text-muted">{rest.join(' ')}</span>
+          <h1 className="mt-8 max-w-2xl font-display text-4xl leading-[1.1] font-semibold tracking-tight text-balance md:text-[3.4rem]">
+            {profile.headline}
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg text-muted md:text-xl">
-            <span className="text-fg">{profile.role}.</span> {profile.headline}
-          </p>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{profile.intro}</p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <ButtonLink href="#projetos">Ver projetos</ButtonLink>
-            <ButtonLink href="#contato" variant="ghost">
-              Fale comigo
-            </ButtonLink>
-            <div className="ml-1 flex gap-1 text-muted">
-              <a href={profile.socials[0].url} target="_blank" rel="noreferrer" aria-label="GitHub" className="grid h-10 w-10 place-items-center rounded-lg hover:bg-surface-2 hover:text-fg">
-                <GithubIcon width={20} height={20} />
+          <div className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-3">
+            <ButtonLink href="#projetos">Ver o que já fiz</ButtonLink>
+            <p className="text-sm text-muted">
+              ou me escreva em{' '}
+              <a
+                href={`mailto:${profile.email}`}
+                className="text-fg underline decoration-line decoration-2 underline-offset-4 transition-colors hover:decoration-accent"
+              >
+                {profile.email}
               </a>
-              <a href={profile.socials[1].url} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="grid h-10 w-10 place-items-center rounded-lg hover:bg-surface-2 hover:text-fg">
-                <LinkedinIcon width={20} height={20} />
-              </a>
-            </div>
+            </p>
+          </div>
+
+          <div className="mt-6 flex gap-4 text-sm text-muted">
+            <a href={profile.socials[0].url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-fg">
+              <GithubIcon width={16} height={16} /> GitHub
+            </a>
+            <a href={profile.socials[1].url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-fg">
+              <LinkedinIcon width={16} height={16} /> LinkedIn
+            </a>
           </div>
         </div>
 

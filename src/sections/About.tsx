@@ -9,7 +9,7 @@ const pillars = [
 
 export default function About() {
   return (
-    <Section id="sobre" index="01" title="Software que resolve problema de verdade">
+    <Section id="sobre" index="01" title="Sobre mim">
       <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr]">
         <div className="reveal space-y-5 text-lg leading-relaxed text-muted">
           {profile.about.map((p) => (

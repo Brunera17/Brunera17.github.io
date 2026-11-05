@@ -54,7 +54,7 @@ export default function Projects() {
         })}
       </div>
 
-      {/* 1. Destaques — o primeiro ocupa a linha inteira */}
+      {/* 1. Destaques: o primeiro ocupa a linha inteira */}
       <div className="grid gap-5 md:grid-cols-2">
         {visible.map((p, i) => (
           <div key={p.slug} className={i === 0 && filter === 'todos' ? 'md:col-span-2' : ''}>

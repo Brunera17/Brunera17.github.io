@@ -2,12 +2,16 @@ import type { Profile } from '../types'
 
 export const profile: Profile = {
   name: 'Bruno David Martins',
-  role: 'Full Stack Developer',
-  headline: 'Automação e integrações que eliminam trabalho manual — Python, React e TypeScript.',
+  role: 'Desenvolvedor full stack',
+  currentJob: 'Líder de Automação na Domingos Contabilidade',
+  // Frase principal do topo do site.
+  headline: 'Transformo planilhas e processos manuais em sistemas que a equipe usa todo dia.',
+  intro:
+    'Sou desenvolvedor full stack e cuido da automação de um escritório de contabilidade. Escrevo em Python, React e TypeScript, e também dou aula de programação.',
   about: [
-    'Desenvolvedor Full Stack com mais de 4 anos de experiência, formado em Análise e Desenvolvimento de Sistemas (Uneduvale).',
-    'Hoje lidero o setor de automação na Domingos Contabilidade, onde já eliminei mais de 50 horas de trabalho manual por mês, e dou aulas de Programação e IA em duas escolas.',
-    'Entrego software de ponta a ponta — do modelo de dados ao deploy — com back-end em Python/Flask, front-end em React/TypeScript e bancos relacionais.',
+    'Comecei como técnico de suporte, me formei em Análise e Desenvolvimento de Sistemas na Uneduvale e trabalho com desenvolvimento há mais de 4 anos.',
+    'Na Domingos Contabilidade eu lidero a automação. As rotinas que escrevi já tiram mais de 50 horas de trabalho manual por mês da equipe. Também dou aula de Programação e IA em duas escolas.',
+    'Gosto de pegar o projeto inteiro: modelar o banco, escrever a API em Python, fazer a tela em React e colocar no ar.',
   ],
   avatarUrl: 'https://github.com/Brunera17.png',
   email: 'dbrunobruno369@gmail.com',

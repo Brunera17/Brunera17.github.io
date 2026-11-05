@@ -24,7 +24,7 @@ export const certifications: Certification[] = [
 ]
 
 export const awards: Award[] = [
-  { title: '2º lugar — Hackathon 2024', detail: 'Solução web full stack completa sob tempo real' },
-  { title: '3º lugar — II Edutech 2025', detail: 'Inovação tecnológica em educação' },
-  { title: '4 artigos aprovados — XVIII CONINCE', detail: 'Automação e integração de sistemas' },
+  { title: 'Hackathon 2024: 2º lugar', detail: 'Solução web full stack completa sob tempo real' },
+  { title: 'II Edutech 2025: 3º lugar', detail: 'Inovação tecnológica em educação' },
+  { title: 'XVIII CONINCE: 4 artigos aprovados', detail: 'Automação e integração de sistemas' },
 ]
