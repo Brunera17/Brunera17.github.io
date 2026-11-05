@@ -12,31 +12,26 @@ const terminal = [
 ] as const
 
 export default function Hero() {
+  const [first, ...rest] = profile.name.split(' ')
+
   return (
     <section id="inicio" className="relative overflow-hidden">
       <div className="bg-grid pointer-events-none absolute inset-0" />
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-4 pt-14 pb-20 sm:px-6 md:pt-20 lg:grid-cols-[1.2fr_1fr]">
         <div className="reveal">
-          {/* Quem sou */}
-          <div className="flex items-center gap-3">
-            <img
-              src={profile.avatarUrl}
-              alt=""
-              width={44}
-              height={44}
-              className="h-11 w-11 rounded-full border border-line"
-            />
-            <div className="leading-tight">
-              <p className="font-medium">{profile.name}</p>
-              <p className="text-sm text-muted">{profile.currentJob}</p>
-            </div>
-          </div>
+          <p className="text-sm text-muted">{profile.currentJob}</p>
 
-          <h1 className="mt-8 max-w-2xl font-display text-4xl leading-[1.1] font-semibold tracking-tight text-balance md:text-[3.4rem]">
-            {profile.headline}
+          <h1 className="mt-4 font-display text-5xl leading-[1.05] font-bold tracking-tight md:text-7xl">
+            {first}
+            <br />
+            <span className="text-muted">{rest.join(' ')}</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{profile.intro}</p>
+          <p className="mt-7 max-w-xl text-xl leading-snug font-medium text-balance md:text-2xl">
+            {profile.headline}
+          </p>
+
+          <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">{profile.intro}</p>
 
           <div className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-3">
             <ButtonLink href="#projetos">Ver o que já fiz</ButtonLink>
