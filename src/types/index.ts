@@ -20,6 +20,13 @@ export interface Profile {
 
 export type ProjectStatus = 'producao' | 'desenvolvimento' | 'publico' | 'privado' | 'estudo'
 
+export interface ProjectImage {
+  /** Caminho a partir de public/, ex.: 'projects/portal-fator-r/01.webp' */
+  src: string
+  /** Descrição curta da tela (aparece como legenda e texto alternativo) */
+  alt: string
+}
+
 export interface Project {
   slug: string
   title: string
@@ -31,6 +38,7 @@ export interface Project {
   featured: boolean
   repoUrl?: string
   liveUrl?: string
+  images?: ProjectImage[]
 }
 
 export interface Experience {

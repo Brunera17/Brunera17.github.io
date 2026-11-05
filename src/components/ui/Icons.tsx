@@ -79,7 +79,27 @@ export const LockIcon = (p: IconProps) => (
   </svg>
 )
 
-export const AwardIcon = (p: IconProps) => (
+export const ImagesIcon = (p: IconProps) => (
+  <svg {...base} {...p}>
+    <rect x="3" y="3" width="18" height="18" rx="2" />
+    <circle cx="9" cy="9" r="2" />
+    <path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21" />
+  </svg>
+)
+
+export const ChevronLeftIcon = (p: IconProps) => (
+  <svg {...base} {...p}>
+    <path d="m15 18-6-6 6-6" />
+  </svg>
+)
+
+export const ChevronRightIcon = (p: IconProps) => (
+  <svg {...base} {...p}>
+    <path d="m9 18 6-6-6-6" />
+  </svg>
+)
+
+export const AwardIcon =(p: IconProps) => (
   <svg {...base} {...p}>
     <circle cx="12" cy="8" r="6" />
     <path d="M15.5 13 17 22l-5-3-5 3 1.5-9" />

@@ -30,6 +30,15 @@ export const projects: Project[] = [
     stack: ['FastAPI', 'PostgreSQL', 'React', 'TypeScript', 'PWA', 'Docker'],
     status: 'desenvolvimento',
     featured: true,
+    images: [
+      { src: 'projects/portal-fator-r/01.webp', alt: 'Dashboard da carteira com o Fator R de cada empresa e alertas' },
+      { src: 'projects/portal-fator-r/02.webp', alt: 'Histórico da empresa com gráfico do Fator R mês a mês e limite de 28%' },
+      { src: 'projects/portal-fator-r/03.webp', alt: 'Dashboard no celular (PWA)' },
+      { src: 'projects/portal-fator-r/04.webp', alt: 'Simulador de folha mínima e receita máxima para manter o Anexo III' },
+      { src: 'projects/portal-fator-r/05.webp', alt: 'Simulador no celular' },
+      { src: 'projects/portal-fator-r/06.webp', alt: 'Central de alertas' },
+      { src: 'projects/portal-fator-r/07.webp', alt: 'Log de auditoria com valor anterior e novo' },
+    ],
   },
   {
     slug: 'planejador-tributario',
@@ -43,6 +52,15 @@ export const projects: Project[] = [
     stack: ['FastAPI', 'SQLAlchemy', 'PostgreSQL', 'React', 'TypeScript'],
     status: 'desenvolvimento',
     featured: true,
+    images: [
+      { src: 'projects/planejador-tributario/01.webp', alt: 'Resultado da simulação: carga de cada regime com composição por tributo e veredito' },
+      { src: 'projects/planejador-tributario/02.webp', alt: 'Projeção da Reforma Tributária de 2026 a 2033 com o regime de menor carga em cada ano' },
+      { src: 'projects/planejador-tributario/03.webp', alt: 'Resultado da simulação no celular' },
+      { src: 'projects/planejador-tributario/04.webp', alt: 'Oportunidades de economia e recuperação com impacto e prioridade' },
+      { src: 'projects/planejador-tributario/05.webp', alt: 'Coleta do movimento mensal: faturamento das notas, compras, devoluções e folha' },
+      { src: 'projects/planejador-tributario/06.webp', alt: 'Verificação por NCM com tratamento de PIS/COFINS e ação recomendada' },
+      { src: 'projects/planejador-tributario/07.webp', alt: 'Memória de cálculo com fórmula, resultado e fundamento legal de cada etapa' },
+    ],
   },
   {
     slug: 'gerador-de-memorando',
@@ -71,6 +89,14 @@ export const projects: Project[] = [
     status: 'publico',
     featured: true,
     repoUrl: 'https://github.com/Brunera17/Portal-de-solicitacoes',
+    images: [
+      { src: 'projects/portal-de-solicitacoes/01.webp', alt: 'Kanban do gerente com as solicitações novas' },
+      { src: 'projects/portal-de-solicitacoes/02.webp', alt: 'Dashboard do gerente' },
+      { src: 'projects/portal-de-solicitacoes/03.webp', alt: 'Detalhe da solicitação com comentários e histórico' },
+      { src: 'projects/portal-de-solicitacoes/04.webp', alt: 'Listagem no celular' },
+      { src: 'projects/portal-de-solicitacoes/05.webp', alt: 'Dashboard no modo escuro' },
+      { src: 'projects/portal-de-solicitacoes/06.webp', alt: 'Listagem de solicitações' },
+    ],
   },
   {
     slug: 'baixar-videos',
@@ -85,6 +111,7 @@ export const projects: Project[] = [
     status: 'publico',
     featured: true,
     repoUrl: 'https://github.com/Brunera17/Baixar-videos',
+    images: [{ src: 'projects/baixar-videos/01.webp', alt: 'Janela do app baixando um vídeo, com fila, miniatura e progresso' }],
   },
   {
     slug: 'site-domingos',
@@ -95,7 +122,12 @@ export const projects: Project[] = [
     status: 'producao',
     featured: true,
     repoUrl: 'https://github.com/Brunera17/Site-Domingos',
-    liveUrl: 'https://site-domingos.vercel.app',
+    liveUrl: 'https://www.domingosassessoria.com.br',
+    images: [
+      { src: 'projects/site-domingos/01.webp', alt: 'Página inicial' },
+      { src: 'projects/site-domingos/02.webp', alt: 'Catálogo de serviços com filtros e busca' },
+      { src: 'projects/site-domingos/03.webp', alt: 'Página de planos' },
+    ],
   },
   {
     slug: 'busca-optancia',

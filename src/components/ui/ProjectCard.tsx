@@ -1,5 +1,5 @@
 import type { Project, ProjectStatus } from '../../types'
-import { ArrowUpRightIcon, GithubIcon, LockIcon } from './Icons'
+import { ArrowUpRightIcon, GithubIcon, ImagesIcon, LockIcon } from './Icons'
 import Tag from './Tag'
 
 export const statusLabel: Record<ProjectStatus, string> = {
@@ -10,7 +10,7 @@ export const statusLabel: Record<ProjectStatus, string> = {
   estudo: 'Estudo',
 }
 
-function StatusBadge({ status }: { status: ProjectStatus }) {
+export function StatusBadge({ status }: { status: ProjectStatus }) {
   if (status === 'producao') {
     return (
       <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-2.5 py-1 text-xs font-medium text-accent">
@@ -38,7 +38,15 @@ function StatusBadge({ status }: { status: ProjectStatus }) {
   )
 }
 
-export default function ProjectCard({ project, large = false }: { project: Project; large?: boolean }) {
+interface ProjectCardProps {
+  project: Project
+  large?: boolean
+  onOpen: (project: Project) => void
+}
+
+export default function ProjectCard({ project, large = false, onOpen }: ProjectCardProps) {
+  const shots = project.images?.length ?? 0
+
   return (
     <article
       className={`reveal group relative flex h-full flex-col rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-accent/60 ${
@@ -47,7 +55,7 @@ export default function ProjectCard({ project, large = false }: { project: Proje
     >
       <div className="flex items-start justify-between gap-3">
         <StatusBadge status={project.status} />
-        <div className="flex gap-1 text-muted">
+        <div className="relative z-10 flex gap-1 text-muted">
           {project.repoUrl && (
             <a
               href={project.repoUrl}
@@ -74,7 +82,14 @@ export default function ProjectCard({ project, large = false }: { project: Proje
       </div>
 
       <h3 className={`mt-5 font-display font-semibold tracking-tight ${large ? 'text-2xl md:text-3xl' : 'text-xl'}`}>
-        {project.title}
+        {/* O botão cobre o card inteiro (after:inset-0): clicar em qualquer lugar abre os detalhes */}
+        <button
+          type="button"
+          onClick={() => onOpen(project)}
+          className="text-left after:absolute after:inset-0 after:rounded-2xl after:content-[''] focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-accent"
+        >
+          {project.title}
+        </button>
       </h3>
       <p className={`mt-2 text-muted ${large ? 'md:text-lg' : 'text-[15px]'}`}>{project.summary}</p>
 
@@ -96,10 +111,23 @@ export default function ProjectCard({ project, large = false }: { project: Proje
         </ul>
       )}
 
-      <div className="mt-auto flex flex-wrap gap-1.5 pt-6">
-        {project.stack.map((s) => (
-          <Tag key={s}>{s}</Tag>
-        ))}
+      <div className="mt-auto flex flex-wrap items-end justify-between gap-x-4 gap-y-3 pt-6">
+        <div className="flex flex-wrap gap-1.5">
+          {project.stack.map((s) => (
+            <Tag key={s}>{s}</Tag>
+          ))}
+        </div>
+        <span className="inline-flex shrink-0 items-center gap-1.5 text-sm text-muted transition-colors group-hover:text-accent">
+          {shots > 0 ? (
+            <>
+              <ImagesIcon width={15} height={15} />
+              Ver {shots} {shots === 1 ? 'tela' : 'telas'}
+            </>
+          ) : (
+            'Ver detalhes'
+          )}
+          <span aria-hidden="true">→</span>
+        </span>
       </div>
     </article>
   )

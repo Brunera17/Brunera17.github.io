@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import Section from '../components/layout/Section'
 import ProjectCard, { statusLabel } from '../components/ui/ProjectCard'
+import ProjectModal from '../components/ui/ProjectModal'
 import { ArrowUpRightIcon, LockIcon, StarIcon } from '../components/ui/Icons'
 import { projects } from '../data/projects'
 import { profile } from '../data/profile'
 import { useGithubRepos } from '../hooks/useGithubRepos'
-import type { ProjectStatus } from '../types'
+import type { Project, ProjectStatus } from '../types'
 
 const featured = projects.filter((p) => p.featured)
 const others = projects.filter((p) => !p.featured)
@@ -20,6 +21,7 @@ const filters: Filter[] = ['todos', 'producao', 'desenvolvimento', 'publico']
 
 export default function Projects() {
   const [filter, setFilter] = useState<Filter>('todos')
+  const [open, setOpen] = useState<Project | null>(null)
   const { repos, loading, error } = useGithubRepos(profile.githubUser, shownRepos)
 
   const visible = filter === 'todos' ? featured : featured.filter((p) => p.status === filter)
@@ -58,7 +60,7 @@ export default function Projects() {
       <div className="grid gap-5 md:grid-cols-2">
         {visible.map((p, i) => (
           <div key={p.slug} className={i === 0 && filter === 'todos' ? 'md:col-span-2' : ''}>
-            <ProjectCard project={p} large={i === 0 && filter === 'todos'} />
+            <ProjectCard project={p} large={i === 0 && filter === 'todos'} onOpen={setOpen} />
           </div>
         ))}
       </div>
@@ -117,9 +119,9 @@ export default function Projects() {
       {error && (
         <p className="mt-5 text-sm text-muted">Não foi possível carregar os repositórios agora.</p>
       )}
-      <ul className="mt-5 grid gap-4 md:grid-cols-3">
+      <ul className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-3">
         {repos.map((r) => (
-          <li key={r.id} className="reveal">
+          <li key={r.id} className="reveal min-w-0">
             <a
               href={r.html_url}
               target="_blank"
@@ -148,6 +150,7 @@ export default function Projects() {
           </li>
         ))}
       </ul>
+      <ProjectModal project={open} onClose={() => setOpen(null)} />
     </Section>
   )
 }
