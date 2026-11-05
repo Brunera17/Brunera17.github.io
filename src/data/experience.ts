@@ -3,7 +3,7 @@ import type { Experience } from '../types'
 export const experience: Experience[] = [
   {
     role: 'Líder de Automação',
-    company: 'Domingos Contabilidade',
+    company: 'Domingos Assessoria Empresarial',
     period: 'Atual',
     description:
       'Liderança do setor de automação com foco em processos do sistema Domínio: mais de 50h/mês de trabalho manual eliminadas com rotinas automatizadas e integração de sistemas.',
