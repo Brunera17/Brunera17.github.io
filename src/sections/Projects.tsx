@@ -16,7 +16,7 @@ const shownRepos = projects
   .filter((n): n is string => Boolean(n))
 
 type Filter = 'todos' | ProjectStatus
-const filters: Filter[] = ['todos', 'producao', 'publico']
+const filters: Filter[] = ['todos', 'producao', 'desenvolvimento', 'publico']
 
 export default function Projects() {
   const [filter, setFilter] = useState<Filter>('todos')

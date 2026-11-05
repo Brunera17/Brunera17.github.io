@@ -4,6 +4,7 @@ import Tag from './Tag'
 
 export const statusLabel: Record<ProjectStatus, string> = {
   producao: 'Em produção',
+  desenvolvimento: 'Quase em produção',
   publico: 'Código aberto',
   privado: 'Privado',
   estudo: 'Estudo',
@@ -18,6 +19,14 @@ function StatusBadge({ status }: { status: ProjectStatus }) {
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
         </span>
         {statusLabel.producao}
+      </span>
+    )
+  }
+  if (status === 'desenvolvimento') {
+    return (
+      <span className="inline-flex items-center gap-1.5 rounded-full bg-warn-soft px-2.5 py-1 text-xs font-medium text-warn">
+        <span className="h-1.5 w-1.5 rounded-full bg-warn" />
+        {statusLabel.desenvolvimento}
       </span>
     )
   }

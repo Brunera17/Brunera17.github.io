@@ -16,7 +16,7 @@ export interface Profile {
   highlights: { value: string; label: string }[]
 }
 
-export type ProjectStatus = 'producao' | 'publico' | 'privado' | 'estudo'
+export type ProjectStatus = 'producao' | 'desenvolvimento' | 'publico' | 'privado' | 'estudo'
 
 export interface Project {
   slug: string
