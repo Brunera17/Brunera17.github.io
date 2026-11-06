@@ -18,7 +18,7 @@ export const profile: Profile = {
   githubUser: 'Brunera17',
   socials: [
     { label: 'GitHub', url: 'https://github.com/Brunera17' },
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/bruno-david-martins-906781222' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/brunodavidmartins' },
   ],
   highlights: [
     { value: '4+', label: 'anos de experiência' },
