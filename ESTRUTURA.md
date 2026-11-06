@@ -56,7 +56,7 @@ portifolio/
 
 | # | Seção | Fonte dos dados | Objetivo |
 |---|---|---|---|
-| 1 | **Hero** | `profile.ts` | Quem é você em 5 segundos + números de impacto (4+ anos, 50h+/mês, 14 usuários) |
+| 1 | **Hero** | `profile.ts` | Quem é você em 5 segundos + números de impacto (4+ anos, 50h+/semana, 14 usuários) |
 | 2 | **Sobre** | `profile.ts` | Contexto: liderança em automação, ensino, entrega ponta a ponta |
 | 3 | **Projetos** | `projects.ts` + API do GitHub | 6 destaques com problema → solução → stack; privados aparecem sem link; repositórios novos entram sozinhos |
 | 4 | **Experiência** | `experience.ts` | Linha do tempo |

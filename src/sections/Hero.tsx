@@ -8,7 +8,7 @@ const terminal = [
   { kind: 'out', text: 'lendo PDFs de consulta fiscal' },
   { kind: 'out', text: 'gerando memorandos .docx' },
   { kind: 'out', text: 'sincronizando com o Domínio' },
-  { kind: 'done', text: '+50h/mês devolvidas à equipe' },
+  { kind: 'done', text: '+50h/semana devolvidas à equipe' },
 ] as const
 
 export default function Hero() {

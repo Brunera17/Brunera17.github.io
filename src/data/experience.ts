@@ -2,18 +2,18 @@ import type { Experience } from '../types'
 
 export const experience: Experience[] = [
   {
-    role: 'Líder de Automação',
+    role: 'Auxiliar Fiscal · Responsável pelas Automações',
     company: 'Domingos Assessoria Empresarial',
     period: 'Atual',
     description:
-      'Liderança do setor de automação com foco em processos do sistema Domínio: mais de 50h/mês de trabalho manual eliminadas com rotinas automatizadas e integração de sistemas.',
+      'Responsável pelas automações da empresa, com foco em processos do sistema Domínio: mais de 50h/semana de trabalho manual eliminadas com rotinas automatizadas e integração de sistemas.',
   },
   {
-    role: 'Full Stack Developer',
+    role: 'Assistente Fiscal e Contábil · Marketing e Desenvolvimento de Sistemas Internos',
     company: 'Christino Contabilidade',
     period: '2022 – 2025',
     description:
-      'APIs REST em Flask, modelagem e otimização de banco de dados (MySQL/SQLite) e deploy em produção (Heroku, Linux, GCP).',
+      'Rotina fiscal e contábil e marketing do escritório, além dos sistemas internos: APIs REST em Flask, modelagem e otimização de banco de dados (MySQL/SQLite) e deploy em produção (Heroku, Linux, GCP).',
   },
   {
     role: 'Professor de Programação e IA',
